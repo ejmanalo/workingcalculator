@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Working Calculator by EjManalo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background:linear-gradient(90deg, rgba(127,85,57,1) 22%, rgba(164,113,72,1) 29%, rgba(176,137,104,1) 39%, rgba(155,106,64,1) 66%)">
+    <table>
+        <tr>
+            <td colspan="3">
+                <input type="text" id='result' disabled>
+            </td>
+            <td><input type="button" onclick="clearInput()" value="AC"></td>
+        </tr>
+
+        <tr class="button" >
+            <td><input type="button" onclick="appendNumber(1)" value="1"></td>
+            <td><input type="button" onclick="appendNumber(2)" value="2"></td>
+            <td><input type="button" onclick="appendNumber(3)" value="3"></td>
+            <td><input type="button" onclick="division()" value="/"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" onclick="appendNumber(4)" value="4"></td>
+            <td><input type="button" onclick="appendNumber(5)" value="5"></td>
+            <td><input type="button" onclick="appendNumber(6)" value="6"></td>
+            <td><input type="button" onclick="multiplication()" value="x"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" onclick="appendNumber(7)" value="7"></td>
+            <td><input type="button" onclick="appendNumber(8)" value="8"></td>
+            <td><input type="button" onclick="appendNumber(9)" value="9"></td>
+            <td><input type="button" onclick="subtraction()" value="-"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" onclick="appendNumber('.')" value="."></td>
+            <td><input type="button" onclick="appendNumber(0)" value="0"></td>
+            <td><input type="button" onclick="calculate()" value="="></td>
+            <td><input type="button" onclick="addition()" value="+"></td>
+        
+        </tr>
+    </table>
+
+    <script>
+        let currentInput = "";
+        let display = "";
+        let currentOperator = "";
+
+        function clearInput() {
+            currentInput = '';
+            currentOperator= '';
+            display= '';
+            document.getElementById('result').value = '';
+            }     
+
+        function appendNumber(number) {
+            currentInput += number;
+            display += number;
+            document.getElementById('result').value = display;
+            }
+
+        function division() {
+            currentOperator = "/";
+            currentInput += currentOperator;
+            display += "÷";
+            document.getElementById('result').value = display;
+            }
+        function multiplication() {
+            currentOperator = "*" ;
+            currentInput += currentOperator;
+            display += "x";
+            document.getElementById('result').value = display;
+            }
+
+        function subtraction() {
+            currentOperator = "-";
+            currentInput += currentOperator;
+            display += "-";
+            document.getElementById('result').value = display;
+            }
+
+
+        function addition() {
+            currentOperator = "+";
+            currentInput += currentOperator;
+            display += "+";
+            document.getElementById('result').value = display;
+            }
+
+
+        function calculate() {
+            const result = eval(currentInput);
+            document.getElementById('result').value = result;
+            currentInput = result.toString();
+            currentOperator = '';
+            }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+
+        table{
+            border: 5px solid #B0A695;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            background-color: #EBE3D5;
+            padding: 20px 10px;
+           
+        }
+
+        input[type="button"] {
+            width: 60px;
+            height: 60px;
+            padding: 10px 20px;
+            background-color: #b08968;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 5px 5px #B0A695;
+            font-family: Verdana, Geneva, Tahoma, sans-serif; 
+            
+            
+        }
+
+        input[type="text"]{
+            padding: 20px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: white;
+        }
+
+        #result {
+            box-shadow:  2px 5px 5px #B0A695;
+            width: 200px;
+            height: 10px;
+            background-color: whitesmoke;
+        }
+
+        input[type="button"]:hover {
+            background: linear-gradient(#B0A695, #F1EAFF);
+            box-shadow: none;
+        
+        }
+
+        
+
+
+
+        
